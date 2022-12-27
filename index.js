@@ -62,7 +62,6 @@ async function run() {
         app.get('/products/:id', async(req, res) => {
             const productId = req.params.id;
             const quary= ObjectId(productId);
-            console.log(productId);
             const product = await productcollection.findOne(quary);
             if (!product) {
               return res.status(404).send('Product not found');
